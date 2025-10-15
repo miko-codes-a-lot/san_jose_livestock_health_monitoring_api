@@ -1,6 +1,7 @@
 import { Type } from 'class-transformer';
 import {
   IsEmail,
+  IsEnum,
   IsIn,
   IsNotEmpty,
   IsOptional,
@@ -8,6 +9,7 @@ import {
   MinLength,
   ValidateNested,
 } from 'class-validator';
+import { Gender } from '../entities/user.entity';
 
 export class AddressUpsertDto {
   @IsString()
@@ -47,6 +49,9 @@ export class UserUpsertDto {
   @ValidateNested()
   @Type(() => AddressUpsertDto)
   address: AddressUpsertDto;
+
+  @IsEnum(Gender)
+  gender: Gender;
 
   @IsString()
   @IsNotEmpty()

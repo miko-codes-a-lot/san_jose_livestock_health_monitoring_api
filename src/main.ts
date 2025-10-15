@@ -7,6 +7,7 @@ import { SocketIoAdapter } from './_shared/adapters/socket-io.adapter';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  app.setGlobalPrefix('api');
 
   app.useGlobalPipes(new ValidationPipe());
   app.use(cookieParser());

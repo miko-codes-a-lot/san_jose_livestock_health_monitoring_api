@@ -1,6 +1,6 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { User } from './entities/user.entity';
+import { User, UserDocument } from './entities/user.entity';
 import mongoose, { Model } from 'mongoose';
 import { UserUpsertDto } from './dto/user-upsert';
 import * as bcrypt from 'bcrypt';
@@ -8,14 +8,11 @@ import * as bcrypt from 'bcrypt';
 @Injectable()
 export class UsersService {
   constructor(
-    @InjectModel(User.name) private readonly userModel: Model<User>,
+    @InjectModel(User.name) private readonly userModel: Model<UserDocument>,
   ) {}
 
   findByOneUsername(username: string) {
-    return this.userModel
-      .findOne({ username })
-      .select('+password')
-      .populate('clinic');
+    return this.userModel.findOne({ username }).select('+password');
   }
 
   findAll(role?: string) {
