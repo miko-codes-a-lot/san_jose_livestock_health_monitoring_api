@@ -1,0 +1,724 @@
+[
+  {
+    "name": "Abra de Ilog",
+    "level": 4,
+    "children": [
+      {
+        "name": "Armado",
+        "level": 5
+      },
+      {
+        "name": "Balao",
+        "level": 5
+      },
+      {
+        "name": "Cabacao",
+        "level": 5
+      },
+      {
+        "name": "Lumangbayan",
+        "level": 5
+      },
+      {
+        "name": "Poblacion",
+        "level": 5
+      },
+      {
+        "name": "San Vicente",
+        "level": 5
+      },
+      {
+        "name": "Santa Maria",
+        "level": 5
+      },
+      {
+        "name": "Tibag",
+        "level": 5
+      },
+      {
+        "name": "Udalo",
+        "level": 5
+      },
+      {
+        "name": "Wawa",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "name": "Calintaan",
+    "level": 4,
+    "children": [
+      {
+        "name": "Concepcion",
+        "level": 5
+      },
+      {
+        "name": "Iriron",
+        "level": 5
+      },
+      {
+        "name": "Malpalon",
+        "level": 5
+      },
+      {
+        "name": "New Dagupan",
+        "level": 5
+      },
+      {
+        "name": "Poblacion",
+        "level": 5
+      },
+      {
+        "name": "Poypoy",
+        "level": 5
+      },
+      {
+        "name": "Tanyag",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "name": "Looc",
+    "level": 4,
+    "children": [
+      {
+        "name": "Agkawayan",
+        "level": 5
+      },
+      {
+        "name": "Ambil",
+        "level": 5
+      },
+      {
+        "name": "Balikyas",
+        "level": 5
+      },
+      {
+        "name": "Bonbon",
+        "level": 5
+      },
+      {
+        "name": "Bulacan",
+        "level": 5
+      },
+      {
+        "name": "Burol",
+        "level": 5
+      },
+      {
+        "name": "Guitna",
+        "level": 5
+      },
+      {
+        "name": "Kanluran",
+        "level": 5
+      },
+      {
+        "name": "Talaotao",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "name": "Lubang",
+    "level": 4,
+    "children": [
+      {
+        "name": "Araw at Bituin",
+        "level": 5
+      },
+      {
+        "name": "Bagong Sikat",
+        "level": 5
+      },
+      {
+        "name": "Banaag at Pag-asa",
+        "level": 5
+      },
+      {
+        "name": "Binakas",
+        "level": 5
+      },
+      {
+        "name": "Cabra",
+        "level": 5
+      },
+      {
+        "name": "Likas ng Silangan",
+        "level": 5
+      },
+      {
+        "name": "Maginhawa",
+        "level": 5
+      },
+      {
+        "name": "Maligaya",
+        "level": 5
+      },
+      {
+        "name": "Maliig",
+        "level": 5
+      },
+      {
+        "name": "Ninikat ng Pag-asa",
+        "level": 5
+      },
+      {
+        "name": "Paraiso",
+        "level": 5
+      },
+      {
+        "name": "Surville",
+        "level": 5
+      },
+      {
+        "name": "Tagbac",
+        "level": 5
+      },
+      {
+        "name": "Tangal",
+        "level": 5
+      },
+      {
+        "name": "Tilik",
+        "level": 5
+      },
+      {
+        "name": "Vigo",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "name": "Magsaysay",
+    "level": 4,
+    "children": [
+      {
+        "name": "Alibog",
+        "level": 5
+      },
+      {
+        "name": "Caguray",
+        "level": 5
+      },
+      {
+        "name": "Calawag",
+        "level": 5
+      },
+      {
+        "name": "Gapasan",
+        "level": 5
+      },
+      {
+        "name": "Laste",
+        "level": 5
+      },
+      {
+        "name": "Lourdes",
+        "level": 5
+      },
+      {
+        "name": "Nicolas (Bulo)",
+        "level": 5
+      },
+      {
+        "name": "Paclolo",
+        "level": 5
+      },
+      {
+        "name": "Poblacion",
+        "level": 5
+      },
+      {
+        "name": "Purnaga",
+        "level": 5
+      },
+      {
+        "name": "Santa Teresa",
+        "level": 5
+      },
+      {
+        "name": "Sibalat",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "name": "Mamburao",
+    "level": 4,
+    "children": [
+      {
+        "name": "Balansay",
+        "level": 5
+      },
+      {
+        "name": "Fatima (Tii)",
+        "level": 5
+      },
+      {
+        "name": "Payompon",
+        "level": 5
+      },
+      {
+        "name": "Poblacion 1",
+        "level": 5
+      },
+      {
+        "name": "Poblacion 2",
+        "level": 5
+      },
+      {
+        "name": "Poblacion 3",
+        "level": 5
+      },
+      {
+        "name": "Poblacion 4",
+        "level": 5
+      },
+      {
+        "name": "Poblacion 5",
+        "level": 5
+      },
+      {
+        "name": "Poblacion 6",
+        "level": 5
+      },
+      {
+        "name": "Poblacion 7",
+        "level": 5
+      },
+      {
+        "name": "Poblacion 8",
+        "level": 5
+      },
+      {
+        "name": "San Luis (Ligang)",
+        "level": 5
+      },
+      {
+        "name": "Talabaan",
+        "level": 5
+      },
+      {
+        "name": "Tangkalan",
+        "level": 5
+      },
+      {
+        "name": "Tayamaan",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "name": "Paluan",
+    "level": 4,
+    "children": [
+      {
+        "name": "Alipaoy",
+        "level": 5
+      },
+      {
+        "name": "Bagong Silang Poblacion",
+        "level": 5
+      },
+      {
+        "name": "Handang Tumulong Poblacion",
+        "level": 5
+      },
+      {
+        "name": "Harrison",
+        "level": 5
+      },
+      {
+        "name": "Lumangbayan",
+        "level": 5
+      },
+      {
+        "name": "Mananao",
+        "level": 5
+      },
+      {
+        "name": "Mapalad Poblacion",
+        "level": 5
+      },
+      {
+        "name": "Marikit",
+        "level": 5
+      },
+      {
+        "name": "Pag-asa ng Bayan Poblacion",
+        "level": 5
+      },
+      {
+        "name": "San Jose Poblacion",
+        "level": 5
+      },
+      {
+        "name": "Silahis ng Pag-asa Poblacion",
+        "level": 5
+      },
+      {
+        "name": "Tubili",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "name": "Rizal",
+    "level": 4,
+    "children": [
+      {
+        "name": "Adela",
+        "level": 5
+      },
+      {
+        "name": "Aguas",
+        "level": 5
+      },
+      {
+        "name": "Magsikap",
+        "level": 5
+      },
+      {
+        "name": "Malawaan",
+        "level": 5
+      },
+      {
+        "name": "Manoot",
+        "level": 5
+      },
+      {
+        "name": "Pitogo",
+        "level": 5
+      },
+      {
+        "name": "Rizal",
+        "level": 5
+      },
+      {
+        "name": "Rumbang",
+        "level": 5
+      },
+      {
+        "name": "Salvacion",
+        "level": 5
+      },
+      {
+        "name": "San Pedro",
+        "level": 5
+      },
+      {
+        "name": "Santo Niño",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "name": "Sablayan",
+    "level": 4,
+    "children": [
+      {
+        "name": "Batong Buhay",
+        "level": 5
+      },
+      {
+        "name": "Buenavista",
+        "level": 5
+      },
+      {
+        "name": "Burgos",
+        "level": 5
+      },
+      {
+        "name": "Claudio Salgado",
+        "level": 5
+      },
+      {
+        "name": "General Emilio Aguinaldo",
+        "level": 5
+      },
+      {
+        "name": "Ibud",
+        "level": 5
+      },
+      {
+        "name": "Ilvita",
+        "level": 5
+      },
+      {
+        "name": "Lagnas",
+        "level": 5
+      },
+      {
+        "name": "Ligaya",
+        "level": 5
+      },
+      {
+        "name": "Malisbong",
+        "level": 5
+      },
+      {
+        "name": "Paetan",
+        "level": 5
+      },
+      {
+        "name": "Pag-asa",
+        "level": 5
+      },
+      {
+        "name": "Poblacion",
+        "level": 5
+      },
+      {
+        "name": "San Agustin",
+        "level": 5
+      },
+      {
+        "name": "San Francisco",
+        "level": 5
+      },
+      {
+        "name": "San Nicolas",
+        "level": 5
+      },
+      {
+        "name": "San Vicente",
+        "level": 5
+      },
+      {
+        "name": "Santa Lucia",
+        "level": 5
+      },
+      {
+        "name": "Santo Niño",
+        "level": 5
+      },
+      {
+        "name": "Tagumpay",
+        "level": 5
+      },
+      {
+        "name": "Tuban",
+        "level": 5
+      },
+      {
+        "name": "Victoria",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "name": "San Jose",
+    "level": 4,
+    "children": [
+      {
+        "name": "Ambulong",
+        "level": 5
+      },
+      {
+        "name": "Ansiray",
+        "level": 5
+      },
+      {
+        "name": "Bagong Sikat",
+        "level": 5
+      },
+      {
+        "name": "Bangkal",
+        "level": 5
+      },
+      {
+        "name": "Barangay 1",
+        "level": 5
+      },
+      {
+        "name": "Barangay 2",
+        "level": 5
+      },
+      {
+        "name": "Barangay 3",
+        "level": 5
+      },
+      {
+        "name": "Barangay 4",
+        "level": 5
+      },
+      {
+        "name": "Barangay 5",
+        "level": 5
+      },
+      {
+        "name": "Barangay 6",
+        "level": 5
+      },
+      {
+        "name": "Barangay 7",
+        "level": 5
+      },
+      {
+        "name": "Barangay 8",
+        "level": 5
+      },
+      {
+        "name": "Batasan",
+        "level": 5
+      },
+      {
+        "name": "Bayotbot",
+        "level": 5
+      },
+      {
+        "name": "Bubog",
+        "level": 5
+      },
+      {
+        "name": "Buri",
+        "level": 5
+      },
+      {
+        "name": "Camburay",
+        "level": 5
+      },
+      {
+        "name": "Caminawit",
+        "level": 5
+      },
+      {
+        "name": "Catayungan",
+        "level": 5
+      },
+      {
+        "name": "Central",
+        "level": 5
+      },
+      {
+        "name": "Iling Proper",
+        "level": 5
+      },
+      {
+        "name": "Inasakan",
+        "level": 5
+      },
+      {
+        "name": "Ipil",
+        "level": 5
+      },
+      {
+        "name": "La Curva",
+        "level": 5
+      },
+      {
+        "name": "Labangan Iling",
+        "level": 5
+      },
+      {
+        "name": "Labangan Poblacion",
+        "level": 5
+      },
+      {
+        "name": "Mabini",
+        "level": 5
+      },
+      {
+        "name": "Magbay",
+        "level": 5
+      },
+      {
+        "name": "Mangarin",
+        "level": 5
+      },
+      {
+        "name": "Mapaya",
+        "level": 5
+      },
+      {
+        "name": "Monte Claro",
+        "level": 5
+      },
+      {
+        "name": "Murtha",
+        "level": 5
+      },
+      {
+        "name": "Naibuan",
+        "level": 5
+      },
+      {
+        "name": "Natandol",
+        "level": 5
+      },
+      {
+        "name": "Pag-asa",
+        "level": 5
+      },
+      {
+        "name": "Pawican",
+        "level": 5
+      },
+      {
+        "name": "San Agustin",
+        "level": 5
+      },
+      {
+        "name": "San Isidro",
+        "level": 5
+      },
+      {
+        "name": "San Roque",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "name": "Santa Cruz",
+    "level": 4,
+    "children": [
+      {
+        "name": "Alacaak",
+        "level": 5
+      },
+      {
+        "name": "Barahan",
+        "level": 5
+      },
+      {
+        "name": "Casague",
+        "level": 5
+      },
+      {
+        "name": "Dayap",
+        "level": 5
+      },
+      {
+        "name": "Kurtinganan",
+        "level": 5
+      },
+      {
+        "name": "Lumangbayan",
+        "level": 5
+      },
+      {
+        "name": "Mulawin",
+        "level": 5
+      },
+      {
+        "name": "Pinagturilan",
+        "level": 5
+      },
+      {
+        "name": "Poblacion I",
+        "level": 5
+      },
+      {
+        "name": "Poblacion II",
+        "level": 5
+      },
+      {
+        "name": "San Vicente",
+        "level": 5
+      }
+    ]
+  }
+]
