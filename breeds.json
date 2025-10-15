@@ -1,0 +1,83 @@
+[
+  {
+    "category": "Cattle",
+    "icon": "🐮",
+    "description": "Bovine livestock raised for beef and draft power.",
+    "breeds": [
+      "Brahman",
+      "Nellore",
+      "Philippine Native Cattle",
+      "Brahman Crossbreeds"
+    ]
+  },
+  {
+    "category": "Carabao",
+    "icon": "🐃",
+    "description": "Philippine Water Buffalo, essential for farm work.",
+    "breeds": [
+      "Philippine Carabao (Native)",
+      "Murrah Buffalo (for dairy/meat)"
+    ]
+  },
+  {
+    "category": "Swine",
+    "icon": "🐷",
+    "description": "Hogs raised for pork production.",
+    "breeds": [
+      "Native/Local Black Pigs",
+      "Large White",
+      "Landrace",
+      "Duroc",
+      "Pietrain",
+      "Commercial Crossbreeds (e.g., F1)"
+    ]
+  },
+  {
+    "category": "Goat",
+    "icon": "🐐",
+    "description": "Raised for meat (chevon) and sometimes milk.",
+    "breeds": [
+      "Philippine Native Goat",
+      "Boer",
+      "Anglo-Nubian",
+      "Boer Crossbreeds"
+    ]
+  },
+  {
+    "category": "Chicken",
+    "icon": "🐔",
+    "description": "The most common form of poultry.",
+    "breeds": [
+      "Native/Free-Range Chicken (e.g., Darag, Banaba)",
+      "Broilers (Commercial Meat)",
+      "Layers (Commercial Egg Production)",
+      "Rhode Island Red (Dual-purpose)"
+    ]
+  },
+  {
+    "category": "Duck",
+    "icon": "🦆",
+    "description": "Raised for meat and eggs (balut/penoy).",
+    "breeds": [
+      "Pekin Duck",
+      "Itik (Philippine Native Duck)",
+      "Mallard"
+    ]
+  },
+  {
+    "category": "Sheep",
+    "icon": "🐑",
+    "description": "Less common than goats, raised primarily for meat.",
+    "breeds": [
+      "Local Hair Sheep (Native/Crossbreeds)"
+    ]
+  },
+  {
+    "category": "Horse",
+    "icon": "🐴",
+    "description": "Used primarily for draft, transport, or hauling, not typically for consumption.",
+    "breeds": [
+      "Philippine Native Horse (Local Pony)"
+    ]
+  }
+]
