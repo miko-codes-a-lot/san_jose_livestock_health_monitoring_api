@@ -17,7 +17,7 @@ import { diskStorage } from 'multer';
 import { extname, join } from 'path';
 import { UserSessionDto } from 'src/_shared/dto/user-session.dto';
 import { UserSession } from 'src/_shared/decorators/user-session.decorator';
-import { UserUpsertDto } from './dto/upsert-user.dto';
+import { UserUpsertDto } from './dto/user-upsert';
 import { Public } from 'src/auth/auth.controller';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { Response } from 'express';

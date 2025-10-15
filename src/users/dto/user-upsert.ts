@@ -2,7 +2,6 @@ import { Type } from 'class-transformer';
 import {
   IsEmail,
   IsIn,
-  IsMobilePhone,
   IsNotEmpty,
   IsOptional,
   IsString,
@@ -42,7 +41,6 @@ export class UserUpsertDto {
   @IsNotEmpty()
   emailAddress: string;
 
-  @IsMobilePhone('en-PH', { strictMode: true })
   @IsNotEmpty()
   mobileNumber: string;
 
