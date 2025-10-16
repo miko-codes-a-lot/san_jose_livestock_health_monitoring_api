@@ -53,8 +53,13 @@ export class LivestockGroupController {
 
   @HttpCode(HttpStatus.OK)
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.groupService.findOne(id);
+  async findOne(@Param('id') id: string) {
+    const doc = await this.groupService.findOne(id);
+    if (!doc) {
+      throw new NotFoundException('Livestock Group not found');
+    }
+
+    return doc;
   }
 
   @HttpCode(HttpStatus.ACCEPTED)

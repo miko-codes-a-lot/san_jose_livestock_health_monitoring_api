@@ -11,6 +11,7 @@ import {
   BadRequestException,
   UploadedFile,
   Res,
+  NotFoundException,
 } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { diskStorage } from 'multer';
@@ -54,8 +55,13 @@ export class UsersController {
 
   @HttpCode(HttpStatus.OK)
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.usersService.findOne(id);
+  async findOne(@Param('id') id: string) {
+    const doc = await this.usersService.findOne(id);
+    if (!doc) {
+      throw new NotFoundException('User not found');
+    }
+
+    return doc;
   }
 
   @HttpCode(HttpStatus.ACCEPTED)
