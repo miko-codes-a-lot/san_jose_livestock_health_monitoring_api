@@ -6,12 +6,14 @@ import {
   LivestockGroup,
   LivestockGroupSchema,
 } from './entities/livestock-group.entity';
+import { LivestockModule } from 'src/livestock/livestock.module';
 
 @Module({
   imports: [
     MongooseModule.forFeature([
       { name: LivestockGroup.name, schema: LivestockGroupSchema },
     ]),
+    LivestockModule,
   ],
   controllers: [LivestockGroupController],
   providers: [LivestockGroupService],

@@ -64,7 +64,7 @@ export class UsersController {
     return doc;
   }
 
-  @HttpCode(HttpStatus.ACCEPTED)
+  @HttpCode(HttpStatus.CREATED)
   @Post()
   create(@Body() doc: UserUpsertDto) {
     return this.usersService.upsert(doc);

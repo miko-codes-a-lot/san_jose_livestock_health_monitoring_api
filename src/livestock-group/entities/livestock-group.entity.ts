@@ -5,7 +5,7 @@ import { User } from 'src/users/entities/user.entity';
 export enum LivestockGroupStatus {
   DRAFT = 'draft',
   PENDING = 'pending',
-  APPROVED = 'approved',
+  VERIFIED = 'verified',
   REJECTED = 'rejected',
 }
 

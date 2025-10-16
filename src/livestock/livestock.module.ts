@@ -12,5 +12,6 @@ import { Livestock, LivestockSchema } from './entities/livestock.entity';
   ],
   controllers: [LivestockController],
   providers: [LivestockService],
+  exports: [LivestockService],
 })
 export class LivestockModule {}

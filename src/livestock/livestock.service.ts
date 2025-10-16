@@ -3,24 +3,32 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Livestock, LivestockDocument } from './entities/livestock.entity';
 import mongoose, { Model } from 'mongoose';
 import { LivestockUpsertDto } from './dto/livestock-upsert.dto';
+import { LivestockGroupStatus } from 'src/livestock-group/entities/livestock-group.entity';
 
 @Injectable()
 export class LivestockService {
   constructor(
     @InjectModel(Livestock.name)
-    private readonly groupModel: Model<LivestockDocument>,
+    private readonly livestockModel: Model<LivestockDocument>,
   ) {}
 
   findAll() {
-    return this.groupModel.find();
+    return this.livestockModel.find();
   }
 
   findOne(id: string) {
-    return this.groupModel.findOne({ _id: id });
+    return this.livestockModel.findOne({ _id: id });
+  }
+
+  updateStatusByGroupId(groupId: string, status: LivestockGroupStatus) {
+    return this.livestockModel.updateMany(
+      { livestockGroup: groupId },
+      { $set: { status, statusAt: new Date() } },
+    );
   }
 
   async updateAnimalPhotos(id: string, fileNames: string[]) {
-    const updatedDoc = await this.groupModel.findByIdAndUpdate(
+    const updatedDoc = await this.livestockModel.findByIdAndUpdate(
       id,
       { animalPhotos: fileNames },
       { new: true, runValidators: true },
@@ -34,7 +42,7 @@ export class LivestockService {
   }
 
   async upsert(doc: LivestockUpsertDto, id?: string) {
-    const dup = await this.groupModel.findOne({
+    const dup = await this.livestockModel.findOne({
       ...(id && { _id: { $ne: id } }),
       tagNumber: doc.tagNumber,
       livestockGroup: doc.livestockGroup,
@@ -45,10 +53,13 @@ export class LivestockService {
         `Group tag is already taken within the group: "${doc.tagNumber}"`,
       );
 
-    return this.groupModel.findOneAndUpdate(
+    return this.livestockModel.findOneAndUpdate(
       { _id: id || new mongoose.Types.ObjectId() },
       {
         $set: doc,
+        $setOnInsert: {
+          statusAt: new Date(),
+        },
       },
       { upsert: true, new: true },
     );

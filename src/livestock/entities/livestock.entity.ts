@@ -1,6 +1,9 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import mongoose, { HydratedDocument } from 'mongoose';
-import { LivestockGroup } from 'src/livestock-group/entities/livestock-group.entity';
+import {
+  LivestockGroup,
+  LivestockGroupStatus,
+} from 'src/livestock-group/entities/livestock-group.entity';
 import { Gender, User } from 'src/users/entities/user.entity';
 
 export type LivestockDocument = HydratedDocument<Livestock>;
@@ -38,6 +41,16 @@ export class Livestock {
 
   @Prop()
   isDeceased: boolean;
+
+  @Prop({
+    type: String,
+    enum: LivestockGroupStatus,
+    default: LivestockGroupStatus.DRAFT,
+  })
+  status: LivestockGroupStatus;
+
+  @Prop()
+  statusAt: Date;
 
   @Prop({ type: mongoose.Schema.Types.ObjectId, ref: () => User.name })
   farmer: User;

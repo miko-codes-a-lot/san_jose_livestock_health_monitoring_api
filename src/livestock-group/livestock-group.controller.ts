@@ -12,6 +12,7 @@ import {
   NotFoundException,
   HttpCode,
   HttpStatus,
+  Patch,
 } from '@nestjs/common';
 import { LivestockGroupService } from './livestock-group.service';
 import { diskStorage } from 'multer';
@@ -20,6 +21,7 @@ import { FilesInterceptor } from '@nestjs/platform-express';
 import { existsSync, statSync } from 'fs';
 import { Response } from 'express';
 import { LivestockGroupUpsertDto } from './dto/livestock-group-upsert.dto';
+import { UpdateLivestockGroupStatusDto } from './dto/update-livestock-group-status.dto';
 
 const livestockGroupPhotoStorage = diskStorage({
   destination: './uploads/livestock-group-photos',
@@ -62,7 +64,7 @@ export class LivestockGroupController {
     return doc;
   }
 
-  @HttpCode(HttpStatus.ACCEPTED)
+  @HttpCode(HttpStatus.CREATED)
   @Post()
   create(@Body() doc: LivestockGroupUpsertDto) {
     return this.groupService.upsert(doc);
@@ -107,6 +109,23 @@ export class LivestockGroupController {
     return res.sendFile(filename, {
       root: UPLOAD_ROOT,
     });
+  }
+
+  @HttpCode(HttpStatus.OK)
+  @Patch(':id/status')
+  async updateStatus(
+    @Param('id') id: string,
+    @Body() updateStatusDto: UpdateLivestockGroupStatusDto,
+  ) {
+    const updatedGroup = await this.groupService.updateStatus(
+      id,
+      updateStatusDto.status,
+    );
+
+    return {
+      message: `Livestock group status successfully updated to "${updateStatusDto.status}".`,
+      data: updatedGroup,
+    };
   }
 
   @Put(':id/photos')
