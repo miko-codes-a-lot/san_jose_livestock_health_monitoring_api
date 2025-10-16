@@ -19,7 +19,10 @@ export class HealthRecordsService {
   }
 
   findOne(id: string) {
-    return this.livestockModel.findOne({ _id: id });
+    return this.livestockModel
+      .findOne({ _id: id })
+      .populate('animal')
+      .populate('technician');
   }
 
   async upsert(doc: UpsertHealthRecordDto, id?: string) {
