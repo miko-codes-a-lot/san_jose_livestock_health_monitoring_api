@@ -11,6 +11,7 @@ import { UsersModule } from './users/users.module';
 import { LivestockGroupModule } from './livestock-group/livestock-group.module';
 import { LivestockModule } from './livestock/livestock.module';
 import { HealthRecordsModule } from './health-records/health-records.module';
+import { InsurancePoliciesModule } from './insurance-policies/insurance-policies.module';
 
 @Module({
   imports: [
@@ -32,6 +33,7 @@ import { HealthRecordsModule } from './health-records/health-records.module';
     LivestockGroupModule,
     LivestockModule,
     HealthRecordsModule,
+    InsurancePoliciesModule,
   ],
   controllers: [AppController],
   providers: [AppService],
