@@ -17,7 +17,7 @@ export class LivestockService {
   }
 
   findOne(id: string) {
-    return this.livestockModel.findOne({ _id: id });
+    return this.livestockModel.findOne({ _id: id }).populate('healthRecords');
   }
 
   updateStatusByGroupId(groupId: string, status: LivestockGroupStatus) {

@@ -11,6 +11,8 @@ export type LivestockDocument = HydratedDocument<Livestock>;
 @Schema({
   collection: 'livestocks',
   timestamps: true,
+  toJSON: { virtuals: true },
+  toObject: { virtuals: true },
 })
 export class Livestock {
   _id: mongoose.Types.ObjectId;
@@ -63,3 +65,10 @@ export class Livestock {
 }
 
 export const LivestockSchema = SchemaFactory.createForClass(Livestock);
+
+LivestockSchema.virtual('healthRecords', {
+  ref: 'HealthRecord',
+  localField: '_id',
+  foreignField: 'animal',
+  justOne: false,
+});

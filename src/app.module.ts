@@ -10,6 +10,7 @@ import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
 import { LivestockGroupModule } from './livestock-group/livestock-group.module';
 import { LivestockModule } from './livestock/livestock.module';
+import { HealthRecordsModule } from './health-records/health-records.module';
 
 @Module({
   imports: [
@@ -30,6 +31,7 @@ import { LivestockModule } from './livestock/livestock.module';
     UsersModule,
     LivestockGroupModule,
     LivestockModule,
+    HealthRecordsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
