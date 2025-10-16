@@ -15,8 +15,6 @@ export type InsurancePolicyDocument = HydratedDocument<InsurancePolicy>;
 @Schema({
   collection: 'insurance_policies',
   timestamps: true,
-  toJSON: { virtuals: true },
-  toObject: { virtuals: true },
 })
 export class InsurancePolicy {
   _id: mongoose.Types.ObjectId;

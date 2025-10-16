@@ -1,0 +1,64 @@
+[
+  {
+    "value": "sickness_or_disease",
+    "label": "Sickness or Disease"
+  },
+  {
+    "groupLabel": "Accident",
+    "options": [
+      {
+        "value": "snake_bite",
+        "label": "Snake Bite"
+      },
+      {
+        "value": "drowning",
+        "label": "Drowning"
+      },
+      {
+        "value": "accidental_poisoning",
+        "label": "Accidental Poisoning"
+      },
+      {
+        "value": "fall_or_injury",
+        "label": "Fall or Injury"
+      },
+      {
+        "value": "predator_attack",
+        "label": "Attack by Predators"
+      }
+    ]
+  },
+  {
+    "groupLabel": "Natural Calamity",
+    "options": [
+      {
+        "value": "lightning_strike",
+        "label": "Lightning Strike"
+      },
+      {
+        "value": "flood",
+        "label": "Flood"
+      },
+      {
+        "value": "typhoon",
+        "label": "Typhoon"
+      },
+      {
+        "value": "earthquake",
+        "label": "Earthquake"
+      },
+      {
+        "value": "volcanic_eruption",
+        "label": "Volcanic Eruption"
+      }
+    ]
+  },
+  {
+    "value": "emergency_slaughter",
+    "label": "Emergency Slaughter (on Vet's Advice)"
+  },
+  {
+    "value": "other",
+    "label": "Other (Please Specify)"
+  }
+]

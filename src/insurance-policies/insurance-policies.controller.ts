@@ -132,7 +132,7 @@ export class InsurancePolicyController {
     const updatedGroup = await this.policyService.updateStatus(id, doc.status);
 
     return {
-      message: `Livestock group status successfully updated to "${doc.status}".`,
+      message: `Insurance Policy status successfully updated to "${doc.status}".`,
       data: updatedGroup,
     };
   }
