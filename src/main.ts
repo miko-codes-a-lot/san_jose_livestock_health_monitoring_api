@@ -18,7 +18,7 @@ async function bootstrap() {
   if (!frontendUri) throw new Error('Env "FRONTEND_URI" is missing');
 
   app.enableCors({
-    origin: [frontendUri],
+    origin: '*',
     credentials: true,
   });
 
