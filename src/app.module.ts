@@ -13,6 +13,8 @@ import { LivestockModule } from './livestock/livestock.module';
 import { HealthRecordsModule } from './health-records/health-records.module';
 import { InsurancePoliciesModule } from './insurance-policies/insurance-policies.module';
 import { ClaimsModule } from './claims/claims.module';
+import { LivestockClassificationsModule } from './livestock-classifications/livestock-classifications.module';
+import { LivestockBreedsModule } from './livestock-breeds/livestock-breeds.module';
 
 @Module({
   imports: [
@@ -36,6 +38,8 @@ import { ClaimsModule } from './claims/claims.module';
     HealthRecordsModule,
     InsurancePoliciesModule,
     ClaimsModule,
+    LivestockClassificationsModule,
+    LivestockBreedsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
