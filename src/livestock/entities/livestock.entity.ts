@@ -8,6 +8,9 @@ import { Gender, User } from 'src/users/entities/user.entity';
 
 export type LivestockDocument = HydratedDocument<Livestock>;
 
+import { LivestockClassification } from 'src/livestock-classifications/entities/livestock-classification.entity';
+import { LivestockBreed } from 'src/livestock-breeds/entities/livestock-breed.entity';
+
 @Schema({
   collection: 'livestocks',
   timestamps: true,
@@ -20,11 +23,11 @@ export class Livestock {
   @Prop()
   tagNumber: string;
 
-  @Prop()
-  species: string;
+  @Prop({ type: mongoose.Schema.Types.ObjectId, ref: () => LivestockClassification.name })
+  species: LivestockClassification;
 
-  @Prop()
-  breed: string;
+  @Prop({ type: mongoose.Schema.Types.ObjectId, ref: () => LivestockBreed.name })
+  breed: LivestockBreed;
 
   @Prop()
   age: number;

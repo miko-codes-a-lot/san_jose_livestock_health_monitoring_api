@@ -13,7 +13,9 @@ export class LivestockService {
   ) {}
 
   findAll() {
-    return this.livestockModel.find();
+    return this.livestockModel.find()
+    .populate('breed', 'name')
+    .populate('species', 'name')
   }
 
   findOne(id: string) {
