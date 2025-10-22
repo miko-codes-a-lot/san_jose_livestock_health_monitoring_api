@@ -1,11 +1,13 @@
 [
   {
     "value": "sickness_or_disease",
-    "label": "Sickness or Disease"
+    "label": "Sickness or Disease",
+    "items": []
   },
   {
-    "groupLabel": "Accident",
-    "options": [
+    "value": "accident",
+    "label": "Accident",
+    "items": [
       {
         "value": "snake_bite",
         "label": "Snake Bite"
@@ -29,8 +31,9 @@
     ]
   },
   {
-    "groupLabel": "Natural Calamity",
-    "options": [
+    "value": "natural_calamity",
+    "label": "Natural Calamity",
+    "items": [
       {
         "value": "lightning_strike",
         "label": "Lightning Strike"
@@ -55,10 +58,12 @@
   },
   {
     "value": "emergency_slaughter",
-    "label": "Emergency Slaughter (on Vet's Advice)"
+    "label": "Emergency Slaughter (on Vet's Advice)",
+    "items": []
   },
   {
     "value": "other",
-    "label": "Other (Please Specify)"
+    "label": "Other (Please Specify)",
+    "items": []
   }
 ]
