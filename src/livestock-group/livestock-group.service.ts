@@ -22,7 +22,7 @@ export class LivestockGroupService {
   ) {}
 
   findAll() {
-    return this.groupModel.find();
+    return this.groupModel.find().populate('farmer');
   }
 
   findOne(id: string) {
