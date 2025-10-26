@@ -23,7 +23,7 @@ export class LivestockService {
     return this.livestockModel
       .findOne({ _id: id })
       .populate('breed')
-      .populate('speecies')
+      .populate('species')
       .populate('healthRecords');
   }
 
