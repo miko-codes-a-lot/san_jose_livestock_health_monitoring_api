@@ -15,7 +15,7 @@ export class HealthRecordsService {
   ) {}
 
   findAll() {
-    return this.livestockModel.find();
+    return this.livestockModel.find().populate('technician').populate('animal');
   }
 
   findOne(id: string) {
