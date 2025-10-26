@@ -130,7 +130,6 @@ export class InsurancePolicyController {
     @Body() doc: UpdateInsurancePolicyStatusDto,
   ) {
     const updatedGroup = await this.policyService.updateStatus(id, doc.status);
-
     return {
       message: `Insurance Policy status successfully updated to "${doc.status}".`,
       data: updatedGroup,

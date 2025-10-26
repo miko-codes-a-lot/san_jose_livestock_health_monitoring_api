@@ -38,8 +38,8 @@ export class Claim {
   @Prop()
   causeOfDeathCategory: string;
 
-  @Prop()
-  causeOfDeath: string;
+  @Prop({ required: false })
+  causeOfDeath?: string;
 
   @Prop()
   evidencePhotos: string[];

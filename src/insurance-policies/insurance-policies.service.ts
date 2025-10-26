@@ -20,7 +20,7 @@ export class InsurancePolicyService {
   ) {}
 
   findAll() {
-    return this.policyModel.find();
+    return this.policyModel.find().populate(['farmer', 'livestockGroup']);
   }
 
   findOne(id: string) {

@@ -1,4 +1,4 @@
-import { IsDateString, IsMongoId, IsNotEmpty, IsString } from 'class-validator';
+import { IsDateString, IsMongoId, IsNotEmpty, IsString, IsOptional } from 'class-validator';
 
 export class ClaimUpsertDto {
   @IsMongoId()
@@ -22,7 +22,7 @@ export class ClaimUpsertDto {
   readonly causeOfDeathCategory: string;
 
   @IsString()
-  @IsNotEmpty()
+  @IsOptional()
   readonly causeOfDeath: string;
 
   @IsDateString()

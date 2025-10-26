@@ -12,6 +12,7 @@ import {
   NotFoundException,
   UseInterceptors,
   UploadedFiles,
+  Patch
 } from '@nestjs/common';
 import { LivestockService } from './livestock.service';
 import { diskStorage } from 'multer';
@@ -20,6 +21,7 @@ import { LivestockUpsertDto } from './dto/livestock-upsert.dto';
 import { Response } from 'express';
 import { existsSync, statSync } from 'fs';
 import { FilesInterceptor } from '@nestjs/platform-express';
+import { LivestockGroupStatus } from '../livestock-group/entities/livestock-group.entity'; // or wherever your enum is
 
 const livestockPhotoStorage = diskStorage({
   destination: './uploads/livestock-photos',
@@ -46,6 +48,15 @@ export class LivestockController {
   @Get()
   findAll() {
     return this.liveStockService.findAll();
+  }
+
+  @Patch('group/:groupId/status')
+  async updateGroupStatus(
+    @Param('groupId') groupId: string,
+    @Body('status') status: LivestockGroupStatus
+  ) {
+    await this.liveStockService.updateStatusByGroupId(groupId, status);
+    return { message: `All livestock in the group updated to "${status}"` };
   }
 
   @HttpCode(HttpStatus.OK)
