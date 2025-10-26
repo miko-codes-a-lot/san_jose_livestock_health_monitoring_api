@@ -23,10 +23,16 @@ export class Livestock {
   @Prop()
   tagNumber: string;
 
-  @Prop({ type: mongoose.Schema.Types.ObjectId, ref: () => LivestockClassification.name })
+  @Prop({
+    type: mongoose.Schema.Types.ObjectId,
+    ref: () => LivestockClassification.name,
+  })
   species: LivestockClassification;
 
-  @Prop({ type: mongoose.Schema.Types.ObjectId, ref: () => LivestockBreed.name })
+  @Prop({
+    type: mongoose.Schema.Types.ObjectId,
+    ref: () => LivestockBreed.name,
+  })
   breed: LivestockBreed;
 
   @Prop()

@@ -13,13 +13,18 @@ export class LivestockService {
   ) {}
 
   findAll() {
-    return this.livestockModel.find()
-    .populate('breed', 'name')
-    .populate('species', 'name')
+    return this.livestockModel
+      .find()
+      .populate('breed', 'name')
+      .populate('species', 'name');
   }
 
   findOne(id: string) {
-    return this.livestockModel.findOne({ _id: id }).populate('healthRecords');
+    return this.livestockModel
+      .findOne({ _id: id })
+      .populate('breed')
+      .populate('speecies')
+      .populate('healthRecords');
   }
 
   updateStatusByGroupId(groupId: string, status: LivestockGroupStatus) {
