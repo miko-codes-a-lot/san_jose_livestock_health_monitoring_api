@@ -21,7 +21,12 @@ export class HealthRecordsService {
   findOne(id: string) {
     return this.livestockModel
       .findOne({ _id: id })
-      .populate('animal')
+      .populate({
+        path: 'animal',
+        populate: {
+          path: 'breed',
+        },
+      })
       .populate('technician');
   }
 
