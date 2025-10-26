@@ -26,7 +26,10 @@ export class LivestockGroupService {
   }
 
   findOne(id: string) {
-    return this.groupModel.findOne({ _id: id }).populate('livestocks');
+    return this.groupModel.findOne({ _id: id }).populate({
+      path: 'livestocks',
+      populate: [{ path: 'breed' }, { path: 'species' }],
+    });
   }
 
   async updateStatus(id: string, status: LivestockGroupStatus) {
