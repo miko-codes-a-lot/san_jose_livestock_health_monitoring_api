@@ -32,7 +32,6 @@ export class UserUpsertDto {
 
   @IsOptional()
   @IsString()
-  @IsNotEmpty()
   middleName?: string;
 
   @IsString()
