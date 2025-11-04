@@ -63,7 +63,6 @@ export class UserUpsertDto {
 
   @IsOptional()
   @IsString()
-  @IsNotEmpty()
   rsbsaNumber?: string;
 
   @IsOptional()
