@@ -16,6 +16,7 @@ import { ClaimsModule } from './claims/claims.module';
 import { LivestockClassificationsModule } from './livestock-classifications/livestock-classifications.module';
 import { LivestockBreedsModule } from './livestock-breeds/livestock-breeds.module';
 import { MortalityCausesModule } from './mortality-causes/mortality-causes.module';
+import { ScheduleModule } from './schedule/schedule.module';
 import { AnalyticsModule } from './analytics/analytics.module';
 
 @Module({
@@ -44,6 +45,7 @@ import { AnalyticsModule } from './analytics/analytics.module';
     LivestockBreedsModule,
     MortalityCausesModule,
     AnalyticsModule,
+    ScheduleModule
   ],
   controllers: [AppController],
   providers: [AppService],

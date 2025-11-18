@@ -56,7 +56,7 @@ export class UserUpsertDto {
   @IsNotEmpty()
   username: string;
 
-  @IsIn(['farmer', 'technician', 'admin'])
+  @IsIn(['farmer', 'technician', 'admin', 'vet'])
   @IsNotEmpty()
   role: string;
 

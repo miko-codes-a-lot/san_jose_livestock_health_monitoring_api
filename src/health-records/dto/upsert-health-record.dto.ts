@@ -57,6 +57,5 @@ export class UpsertHealthRecordDto {
   readonly treatmentGiven?: string;
 
   @IsString()
-  @IsNotEmpty()
   readonly notes: string;
 }
