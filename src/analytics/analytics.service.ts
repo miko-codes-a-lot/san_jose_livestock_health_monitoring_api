@@ -22,6 +22,8 @@ import {
   MortalityCauseDocument,
 } from 'src/mortality-causes/entities/mortality-cause.entity';
 
+import { Types } from 'mongoose';
+
 // Export interfaces
 export interface DashboardStats {
   totalLivestock: number;
@@ -196,7 +198,6 @@ export class AnalyticsService {
       },
       { $sort: { count: -1 } },
     ]);
-
     return {
       labels: result.map((item) => item._id),
       data: result.map((item) => item.count),
@@ -415,11 +416,11 @@ export class AnalyticsService {
   private async getFarmerStats(farmerId: string) {
     const [myLivestock, claimsCounts, healthCheckups] = await Promise.all([
       this.livestockModel.countDocuments({
-        farmer: farmerId,
+        farmer: new Types.ObjectId(farmerId),
         isDeceased: false,
       }),
       this.claimModel.aggregate([
-        { $match: { farmer: farmerId } },
+        { $match: { farmer: new Types.ObjectId(farmerId) } },
         {
           $group: {
             _id: '$status',
@@ -437,7 +438,7 @@ export class AnalyticsService {
           },
         },
         { $unwind: '$animalInfo' },
-        { $match: { 'animalInfo.farmer': farmerId } },
+        { $match: { 'animalInfo.farmer': new Types.ObjectId(farmerId) } },
         { $count: 'total' },
       ]),
     ]);
@@ -467,7 +468,7 @@ export class AnalyticsService {
     farmerId: string,
   ): Promise<ChartData> {
     const result = await this.livestockModel.aggregate([
-      { $match: { farmer: farmerId, isDeceased: false } },
+      { $match: { farmer: new Types.ObjectId(farmerId), isDeceased: false } },
       {
         $lookup: {
           from: 'livestock_classifications',
@@ -485,7 +486,6 @@ export class AnalyticsService {
       },
       { $sort: { count: -1 } },
     ]);
-
     return {
       labels: result.map((item) => item._id),
       data: result.map((item) => item.count),
@@ -494,7 +494,7 @@ export class AnalyticsService {
 
   private async getFarmerClaimsByStatus(farmerId: string): Promise<ChartData> {
     const result = await this.claimModel.aggregate([
-      { $match: { farmer: farmerId } },
+      { $match: { farmer: new Types.ObjectId(farmerId) } },
       {
         $group: {
           _id: '$status',
@@ -542,7 +542,7 @@ export class AnalyticsService {
         },
       },
       { $unwind: '$animalInfo' },
-      { $match: { 'animalInfo.farmer': farmerId } },
+      { $match: { 'animalInfo.farmer': new Types.ObjectId(farmerId) } },
       {
         $group: {
           _id: {
@@ -574,7 +574,7 @@ export class AnalyticsService {
     farmerId: string,
   ): Promise<ChartData> {
     const result = await this.livestockModel.aggregate([
-      { $match: { farmer: farmerId, isDeceased: false } },
+      { $match: { farmer: new Types.ObjectId(farmerId), isDeceased: false } },
       {
         $group: {
           _id: '$isInsured',
