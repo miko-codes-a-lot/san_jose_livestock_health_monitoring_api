@@ -12,7 +12,7 @@ import {
   NotFoundException,
   UseInterceptors,
   UploadedFiles,
-  Patch
+  Patch,
 } from '@nestjs/common';
 import { LivestockService } from './livestock.service';
 import { diskStorage } from 'multer';
@@ -53,7 +53,7 @@ export class LivestockController {
   @Patch('group/:groupId/status')
   async updateGroupStatus(
     @Param('groupId') groupId: string,
-    @Body('status') status: LivestockGroupStatus
+    @Body('status') status: LivestockGroupStatus,
   ) {
     await this.liveStockService.updateStatusByGroupId(groupId, status);
     return { message: `All livestock in the group updated to "${status}"` };

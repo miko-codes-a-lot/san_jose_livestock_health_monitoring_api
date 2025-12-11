@@ -1,8 +1,5 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import {
-  Schedule,
-  ScheduleDocument,
-} from './entities/schedule.entity';
+import { Schedule, ScheduleDocument } from './entities/schedule.entity';
 import { InjectModel } from '@nestjs/mongoose';
 import mongoose, { Model } from 'mongoose';
 import { UpsertScheduleDto } from './dto/upsert-schedule.dto';
@@ -16,15 +13,15 @@ export class ScheduleService {
   ) {}
 
   findAll() {
-    return this.scheduleModel.find()
+    return this.scheduleModel
+      .find()
       .populate('animal')
       .populate('healthRecord')
       .populate('assignedVet');
   }
 
   findOne(id: string) {
-    return this.scheduleModel
-      .findOne({ _id: id })
+    return this.scheduleModel.findOne({ _id: id });
   }
 
   async upsert(doc: UpsertScheduleDto, id?: string) {

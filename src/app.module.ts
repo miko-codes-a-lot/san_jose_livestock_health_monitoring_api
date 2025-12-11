@@ -45,7 +45,7 @@ import { AnalyticsModule } from './analytics/analytics.module';
     LivestockBreedsModule,
     MortalityCausesModule,
     AnalyticsModule,
-    ScheduleModule
+    ScheduleModule,
   ],
   controllers: [AppController],
   providers: [AppService],

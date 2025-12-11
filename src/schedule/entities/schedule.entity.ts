@@ -25,16 +25,39 @@ export enum ScheduleStatus {
   timestamps: true, // createdAt, updatedAt
 })
 export class Schedule {
-  @Prop({ type: mongoose.Schema.Types.ObjectId, ref: () => Livestock.name, required: true })
+  @Prop({
+    type: mongoose.Schema.Types.ObjectId,
+    ref: () => User.name,
+    required: true,
+  })
+  farmer: User;
+
+  @Prop({
+    type: mongoose.Schema.Types.ObjectId,
+    ref: () => Livestock.name,
+    required: true,
+  })
   animal: Livestock;
 
-  @Prop({ type: mongoose.Schema.Types.ObjectId, ref: () => HealthRecord.name, required: true })
+  @Prop({
+    type: mongoose.Schema.Types.ObjectId,
+    ref: () => HealthRecord.name,
+    required: true,
+  })
   healthRecord: HealthRecord;
 
-  @Prop({ type: mongoose.Schema.Types.ObjectId, ref: () => User.name, required: true })
+  @Prop({
+    type: mongoose.Schema.Types.ObjectId,
+    ref: () => User.name,
+    required: true,
+  })
   createdBy: User; // technician
 
-  @Prop({ type: mongoose.Schema.Types.ObjectId, ref: () => User.name, required: true })
+  @Prop({
+    type: mongoose.Schema.Types.ObjectId,
+    ref: () => User.name,
+    required: true,
+  })
   assignedVet: User; // vet
 
   @Prop({ type: String, enum: ScheduleType, required: true })
