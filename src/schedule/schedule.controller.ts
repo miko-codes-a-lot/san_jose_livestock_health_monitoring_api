@@ -8,7 +8,7 @@ import {
   HttpStatus,
   NotFoundException,
   Put,
-  Patch
+  Patch,
 } from '@nestjs/common';
 import { ScheduleService } from './schedule.service';
 import { UpsertScheduleDto } from './dto/upsert-schedule.dto';

@@ -11,7 +11,9 @@ describe('LivestockClassificationsController', () => {
       providers: [LivestockClassificationsService],
     }).compile();
 
-    controller = module.get<LivestockClassificationsController>(LivestockClassificationsController);
+    controller = module.get<LivestockClassificationsController>(
+      LivestockClassificationsController,
+    );
   });
 
   it('should be defined', () => {

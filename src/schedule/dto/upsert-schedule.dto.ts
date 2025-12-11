@@ -4,7 +4,6 @@ import {
   IsMongoId,
   IsNotEmpty,
   IsOptional,
-  IsString,
 } from 'class-validator';
 
 export enum ScheduleType {
@@ -22,6 +21,10 @@ export enum ScheduleStatus {
 }
 
 export class UpsertScheduleDto {
+  @IsMongoId()
+  @IsNotEmpty()
+  readonly farmer: string; // livestock ObjectId
+
   @IsMongoId()
   @IsNotEmpty()
   readonly animal: string; // livestock ObjectId

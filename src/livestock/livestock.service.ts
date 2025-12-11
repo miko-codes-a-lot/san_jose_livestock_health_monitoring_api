@@ -16,8 +16,7 @@ export class LivestockService {
     return this.livestockModel
       .find()
       .populate('breed', 'name')
-      .populate('species', 'name')
-      .populate('farmer')
+      .populate('species', 'name');
   }
 
   findOne(id: string) {

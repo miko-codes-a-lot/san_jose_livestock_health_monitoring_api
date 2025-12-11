@@ -9,7 +9,9 @@ describe('LivestockClassificationsService', () => {
       providers: [LivestockClassificationsService],
     }).compile();
 
-    service = module.get<LivestockClassificationsService>(LivestockClassificationsService);
+    service = module.get<LivestockClassificationsService>(
+      LivestockClassificationsService,
+    );
   });
 
   it('should be defined', () => {

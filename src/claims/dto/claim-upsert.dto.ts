@@ -1,4 +1,10 @@
-import { IsDateString, IsMongoId, IsNotEmpty, IsString, IsOptional } from 'class-validator';
+import {
+  IsDateString,
+  IsMongoId,
+  IsNotEmpty,
+  IsString,
+  IsOptional,
+} from 'class-validator';
 
 export class ClaimUpsertDto {
   @IsMongoId()
