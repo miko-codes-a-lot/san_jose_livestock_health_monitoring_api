@@ -11,6 +11,7 @@ import { Server, Socket } from 'socket.io';
 import { AuthService } from 'src/auth/auth.service';
 import { Notification } from './entities/notification.entity';
 import * as cookie from 'cookie';
+import mongoose from 'mongoose';
 
 @WebSocketGateway({
   namespace: 'notifications',
@@ -81,7 +82,7 @@ export class RtNotificationsGateway
   @OnEvent('notification.created')
   handleNotificationCreated(notification: Notification) {
     this.sendNotificationToUser(
-      notification.recipient._id.toString(), // Ensure string
+      this.getRecipientId(notification), // Ensure string
       notification,
     );
   }
@@ -90,7 +91,7 @@ export class RtNotificationsGateway
   handleNotificationsCreated(notifications: Notification[]) {
     notifications.forEach((notification) => {
       this.sendNotificationToUser(
-        notification.recipient._id.toString(),
+        this.getRecipientId(notification),
         notification,
       );
     });
@@ -108,5 +109,24 @@ export class RtNotificationsGateway
         `Sent notification to user ${userId} on ${sockets.size} device(s)`,
       );
     }
+  }
+
+  private getRecipientId(notification: Notification): string {
+    if (typeof notification.recipient === 'string') {
+      return notification.recipient;
+    }
+    // Check if it's a Mongoose ID (which has .toString but no ._id)
+    if (notification.recipient instanceof mongoose.Types.ObjectId) {
+      return notification.recipient.toString();
+    }
+    // If populated (User object)
+    if (notification.recipient && (notification.recipient as any)._id) {
+      return (notification.recipient as any)._id.toString();
+    }
+
+    this.logger.error(
+      `Could not extract recipient ID from notification: ${JSON.stringify(notification)}`,
+    );
+    return '';
   }
 }

@@ -26,7 +26,7 @@ export class NotificationListenerService implements OnModuleInit {
 
   private watchScheduleChanges() {
     this.scheduleModel.collection
-      .watch<ScheduleDocument>()
+      .watch<ScheduleDocument>([], { fullDocument: 'updateLookup' })
       .on('change', (change) => {
         const handle = async () => {
           try {
@@ -34,9 +34,15 @@ export class NotificationListenerService implements OnModuleInit {
               case 'insert':
                 await this.handleScheduleCreation(change.fullDocument);
                 break;
-              case 'update':
-                // Only trigger if status is actually modified
-                if (change.updateDescription.updatedFields?.status) {
+              case 'update': {
+                const updatedFields =
+                  change.updateDescription?.updatedFields || {};
+                const statusChanged = Object.keys(updatedFields).some((key) =>
+                  key.includes('status'),
+                );
+
+                if (statusChanged) {
+                  // Fetch the fresh document to be 100% sure of current state
                   const updatedSchedule = await this.scheduleModel
                     .findById(change.documentKey._id)
                     .populate([
@@ -51,6 +57,7 @@ export class NotificationListenerService implements OnModuleInit {
                   }
                 }
                 break;
+              }
             }
           } catch (error) {
             this.logger.error('Error processing stream event:', error);
