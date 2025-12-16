@@ -19,7 +19,7 @@ async function bootstrap() {
 
   app.enableCors({
     // use the * if some problem on CORS occured.
-    origin: frontendUri, // *
+    origin: [frontendUri], // *
     credentials: true,
   });
 

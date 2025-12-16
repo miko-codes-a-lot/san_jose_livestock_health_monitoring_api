@@ -18,6 +18,8 @@ import { LivestockBreedsModule } from './livestock-breeds/livestock-breeds.modul
 import { MortalityCausesModule } from './mortality-causes/mortality-causes.module';
 import { ScheduleModule } from './schedule/schedule.module';
 import { AnalyticsModule } from './analytics/analytics.module';
+import { NotificationsModule } from './notifications/notifications.module';
+import { EventEmitterModule } from '@nestjs/event-emitter';
 
 @Module({
   imports: [
@@ -34,6 +36,7 @@ import { AnalyticsModule } from './analytics/analytics.module';
         dbName: configuration().db.name,
       }),
     }),
+    EventEmitterModule.forRoot(),
     AuthModule,
     UsersModule,
     LivestockGroupModule,
@@ -46,6 +49,7 @@ import { AnalyticsModule } from './analytics/analytics.module';
     MortalityCausesModule,
     AnalyticsModule,
     ScheduleModule,
+    NotificationsModule,
   ],
   controllers: [AppController],
   providers: [AppService],

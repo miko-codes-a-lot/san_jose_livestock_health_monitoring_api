@@ -25,6 +25,8 @@ export enum ScheduleStatus {
   timestamps: true, // createdAt, updatedAt
 })
 export class Schedule {
+  _id: mongoose.Types.ObjectId;
+
   @Prop({
     type: mongoose.Schema.Types.ObjectId,
     ref: () => User.name,
