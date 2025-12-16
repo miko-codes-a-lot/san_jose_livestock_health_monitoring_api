@@ -104,7 +104,7 @@ export class NotificationListenerService implements OnModuleInit {
       message: `A ${schedule.type} visit for ${animalName} has been scheduled. Waiting for Vet approval.`,
       type: NotificationType.SCHEDULE_CREATED,
       // Farmers usually have a client/app view
-      link: `/schedule/schedule/${schedule._id.toString()}`,
+      link: `/schedule/details/${schedule._id.toString()}`,
     });
 
     // Note: We usually don't notify the Technician (createdBy) because they triggered it.
@@ -135,7 +135,7 @@ export class NotificationListenerService implements OnModuleInit {
         recipient: schedule.farmer._id.toString(),
         message: `The ${schedule.type} visit for ${animalName} has been CONFIRMED by Dr. ${vetName}.`,
         type: NotificationType.SCHEDULE_STATUS_UPDATED,
-        link: `/schedule/schedule/${schedule._id.toString()}`,
+        link: `/schedule/details/${schedule._id.toString()}`,
       });
     } else if (schedule.status === ScheduleStatus.DECLINED) {
       // Notify Technician: "Vet rejected the schedule"
@@ -151,7 +151,7 @@ export class NotificationListenerService implements OnModuleInit {
         recipient: schedule.farmer._id.toString(),
         message: `The ${schedule.type} visit for ${animalName} was declined. Your technician will update you shortly.`,
         type: NotificationType.SCHEDULE_STATUS_UPDATED,
-        link: `/schedule/schedule/${schedule._id.toString()}`,
+        link: `/schedule/details/${schedule._id.toString()}`,
       });
     }
 
