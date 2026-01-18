@@ -23,6 +23,7 @@ import { Public } from 'src/auth/auth.controller';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { Response } from 'express';
 import { existsSync, statSync } from 'fs';
+import { ChangePasswordDto } from './dto/change-password.dto';
 
 const profilePictureStorage = diskStorage({
   destination: './uploads/profile-pictures',
@@ -74,6 +75,15 @@ export class UsersController {
   @Put(':id')
   update(@Param('id') id: string, @Body() doc: UserUpsertDto) {
     return this.usersService.upsert(doc, id);
+  }
+
+  @HttpCode(HttpStatus.OK)
+  @Put(':id/password')
+  async changePassword(
+    @Param('id') id: string,
+    @Body() doc: ChangePasswordDto,
+  ) {
+    return this.usersService.changePassword(id, doc.password!);
   }
 
   @Public()

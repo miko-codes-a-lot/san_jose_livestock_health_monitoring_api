@@ -39,6 +39,22 @@ export class UsersService {
     return updatedUser;
   }
 
+  async changePassword(id: string, password: string) {
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    const updatedUser = await this.userModel.findByIdAndUpdate(
+      id,
+      { password: hashedPassword },
+      { new: true, runValidators: true },
+    );
+
+    if (!updatedUser) {
+      throw new BadRequestException(`User with ID "${id}" not found.`);
+    }
+
+    return updatedUser;
+  }
+
   async upsert(doc: UserUpsertDto, id?: string) {
     if (doc.password) {
       doc.password = await bcrypt.hash(doc.password, 10);
