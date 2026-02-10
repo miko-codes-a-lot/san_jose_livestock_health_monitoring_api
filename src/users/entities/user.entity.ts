@@ -62,9 +62,20 @@ export class User {
 
   @Prop({ select: false })
   password?: string;
+  
+  // === FORGOT PASSWORD OTP FIELDS ===
+  @Prop({ select: false })
+  resetOtp?: string;
+
+  @Prop({ select: false })
+  resetOtpExpires?: Date;
+
+  @Prop({ select: false, default: false })
+  resetOtpVerified?: boolean;
 
   @Prop()
   role: string; // farmer, technician, admin, vet
+
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);

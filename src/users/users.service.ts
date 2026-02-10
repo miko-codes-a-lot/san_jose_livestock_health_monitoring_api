@@ -80,4 +80,10 @@ export class UsersService {
       { upsert: true, new: true },
     );
   }
+
+  async findForOtp(username: string) {
+    return this.userModel
+      .findOne({ username })
+      .select('+resetOtp +resetOtpExpires +resetOtpVerified +password');
+  }
 }
