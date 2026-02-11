@@ -1,7 +1,7 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { UsersService } from 'src/users/users.service';
-
+import axios from 'axios';
 import * as bcrypt from 'bcrypt';
 
 @Injectable()
@@ -58,12 +58,23 @@ export class AuthService {
 
     await user.save();
     
-    // 🔥 SMS PROVIDER AREA (as requested by client)
-    console.log(`SEND OTP ${otp} TO ${user.mobileNumber}`);
+    await axios.post(
+      'https://api.semaphore.co/api/v4/messages',
+      new URLSearchParams({
+        apikey: process.env.SEMAPHORE_API_KEY as string,
+        number: user.mobileNumber, // 639XXXXXXXXX
+        message: `Your OTP is ${otp}. Valid for 5 minutes.`,
+      }),
+      {
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+      },
+    );
   }
 
   // 2️⃣ Verify OTP
-  async verifyResetOtp(username: string, otp: string) {
+  async verifyResetOtp(username: string, otp: string) { 
     const user = await this.userService.findForOtp(username);
 
     if (
