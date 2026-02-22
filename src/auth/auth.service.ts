@@ -71,25 +71,7 @@ export class AuthService {
         message,
       );
     } catch (error) {
-      console.log('Semaphore immediate failure. Using Twilio fallback...');
-      await this.sendViaTwilio(user.mobileNumber, message);
       return;
-    }
-
-    await new Promise((resolve) => setTimeout(resolve, 10000));
-
-    try {
-      const status: string = await this.getSemaphoreStatus(messageId);
-
-      if (status === 'Failed' || status === 'Refunded') {
-        console.log('Semaphore delivery failed. Falling back to Twilio...');
-        await this.sendViaTwilio(user.mobileNumber, message);
-      } else {
-        console.log('Semaphore accepted or still processing:', status);
-      }
-    } catch (error) {
-      console.log('Status check failed. Falling back to Twilio...');
-      await this.sendViaTwilio(user.mobileNumber, message);
     }
   }
 
@@ -175,32 +157,6 @@ export class AuthService {
     );
 
     return response.data?.status;
-  }
-
-  // --------------------------------
-  // Twilio Fallback
-  // --------------------------------
-
-  private async sendViaTwilio(
-    mobileNumber: string,
-    message: string,
-  ): Promise<void> {
-    const twilio = require('twilio');
-
-    const client = twilio(
-      process.env.TWILIO_ACCOUNT_SID,
-      process.env.TWILIO_AUTH_TOKEN,
-    );
-
-    const formattedNumber: string = this.normalizeToE164(mobileNumber);
-
-    await client.messages.create({
-      to: formattedNumber,
-      from: process.env.TWILIO_PHONE_NUMBER,
-      body: message,
-    });
-
-    console.log('Sent via Twilio');
   }
 
   // 2️⃣ Verify OTP
