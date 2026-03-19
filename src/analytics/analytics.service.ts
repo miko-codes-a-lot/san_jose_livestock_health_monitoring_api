@@ -321,7 +321,10 @@ export class AnalyticsService {
 
   private async getLivestockByLocation(): Promise<ChartData> {
     const result = await this.livestockModel.aggregate([
+      // Only consider livestock that are alive
       { $match: { isDeceased: false } },
+
+      // Join with users to get farmer info
       {
         $lookup: {
           from: 'users',
@@ -331,12 +334,19 @@ export class AnalyticsService {
         },
       },
       { $unwind: '$farmerInfo' },
+
+      // Filter only farmers in San Jose municipality
+      { $match: { 'farmerInfo.address.municipality': 'San Jose' } },
+
+      // Group by barangay instead of municipality
       {
         $group: {
-          _id: '$farmerInfo.address.municipality',
+          _id: '$farmerInfo.address.barangay',
           count: { $sum: 1 },
         },
       },
+
+      // Sort descending by number of livestock
       { $sort: { count: -1 } },
     ]);
 
